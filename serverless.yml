@@ -11,3 +11,20 @@ functions:
     handler: src/handler.hello
     timeout: 60 # seconds
     memorySize: 128 # mb
+  events:
+      - http:
+          path: users/create
+          method: post
+          cors: true
+      - http:
+          path: users/update
+          method: post
+          cors: true
+      - http:
+          path: users/delete
+          method: delete
+          cors: true
+      - http:
+          path: users/list
+          method: get
+          cors: true

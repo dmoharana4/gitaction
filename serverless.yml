@@ -1,13 +1,13 @@
-service: clientos
+service: basic-serverless-lambda
 
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: dev
+  region: us-west-1
 
 functions:
-  getOsInfo:
-    handler: handler.getOsInfo
-    events:
-      - http:
-          path: client/os
-          method: get
+  hello:
+    handler: src/handler.generateRandomNumber
+    timeout: 60 # seconds
+    memorySize: 128 # mb
